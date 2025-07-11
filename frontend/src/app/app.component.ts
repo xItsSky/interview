@@ -1,13 +1,15 @@
 import { Component, signal } from '@angular/core';
+import { HeaderComponent } from './chore/components/header/header.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [HeaderComponent, RouterOutlet],
   template: `
     <main id="frontend-application">
+      <lia-header />
       <section id="frontend-application__container">
-        <h1>Employees Application</h1>
-        <app-root></app-root>
+        <router-outlet></router-outlet>
       </section>
     </main>
   `,
@@ -19,6 +21,10 @@ import { Component, signal } from '@angular/core';
         display: flex;
         flex-direction: column;
 
+        lia-header {
+          height: 4rem;
+        }
+
         &__container {
           padding: 1rem;
         }
@@ -26,6 +32,6 @@ import { Component, signal } from '@angular/core';
     `,
   ],
 })
-export class App {
+export class AppComponent {
   protected readonly title = signal('frontend');
 }

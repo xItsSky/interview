@@ -5,7 +5,6 @@ import {
 } from '@angular/core';
 import { provideRouter, Routes, withHashLocation } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const ROUTES: Routes = [
   {
@@ -25,7 +24,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection(),
     provideHttpClient(),
-    provideAnimationsAsync(),
     provideRouter(ROUTES, withHashLocation()),
     provideBrowserGlobalErrorListeners(),
   ],
